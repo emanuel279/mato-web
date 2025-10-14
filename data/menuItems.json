@@ -1,0 +1,40 @@
+{
+  "ramen": [
+    {
+      "id": 401,
+      "name": "Tonkotsu Ramen con Carne de Res",
+      "description": "Caldo tradicional con carne de res",
+      "price": 165,
+      "image": "/ramen-img/ramen 1.png"
+    },
+    {
+      "id": 402,
+      "name": "Tonkotsu Ramen",
+      "description": "Sabor clásico con caldo de cerdo",
+      "price": 149,
+      "image": "/images/ramen-tonkotsu.jpg"
+    }
+  ],
+  "combos": [
+    {
+      "id": 1,
+      "name": "Tonkotsu + Kara-Age",
+      "price": 184,
+      "image": "/images/combo-karaage.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Tonkotsu + Gyozas",
+      "price": 195,
+      "image": "/images/combo-gyoza.jpg"
+    }
+  ],
+  "extras": [
+    { "id": 1, "name": "Croquetas", "price": 35, "image": "/images/extra-croqueta.jpg" },
+    { "id": 2, "name": "Kara-Age", "price": 55, "image": "/images/extra-karaage.jpg" }
+  ],
+  "bebidas": [
+    { "id": 1, "name": "Limonada", "price": 45, "image": "/images/bebida-limonada.jpg" },
+    { "id": 2, "name": "Cerveza", "price": 69, "image": "/images/bebida-cerveza.jpg" }
+  ]
+}

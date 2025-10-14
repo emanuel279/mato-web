@@ -1,0 +1,55 @@
+/* Fondo general */
+.Promociones-background {
+  min-height: 100vh;
+  background-image: url("/ramen-img/fondoMenu.png");
+  background-size: 100rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Capa oscura sobre el fondo */
+.promociones-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor general */
+.promociones-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cuadro rojo centrado */
+.sin-promociones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.sin-promociones-box {
+  background-color: rgba(204, 28, 28, 0.885); /* rojo medio transparente */
+  padding: 2rem 4rem;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-mochiy-pop-one), sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px); /* da efecto de vidrio suave */
+}
+
+.sin-promociones-box h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}

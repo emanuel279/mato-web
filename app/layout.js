@@ -1,6 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Mochiy_Pop_One, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
+// Fuentes principales
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -9,6 +10,20 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Fuente japonesa para el header
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin", "japanese"],
+  weight: "400",
+});
+
+// Fuente japonesa para el menú
+const mochiyPopOne = Mochiy_Pop_One({
+  variable: "--font-mochiy-pop-one",
+  subsets: ["latin"], // puedes probar ["latin", "japanese"]
+  weight: "400",
 });
 
 export const metadata = {
@@ -20,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${mochiyPopOne.variable} ${notoSansJP.variable} antialiased`}
       >
         {children}
       </body>

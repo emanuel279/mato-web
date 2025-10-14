@@ -1,0 +1,71 @@
+/* Fondo general */
+.ubicacion-background {
+  min-height: 100vh;
+  background-image: url("/ramen-img/fondoMenu.png");
+  background-size: 100rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Capa oscura sobre el fondo */
+.ubicacion-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor general */
+.ubicacion-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card con mapa */
+.ubicacion-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 900px;      /* Antes era 700px, ahora más ancho */
+  width: 95%;            /* Ocupa casi todo el ancho en pantallas pequeñas */
+  margin-top: 4rem;      /* Más espacio arriba */
+  z-index: 3;
+}
+
+.ubicacion-card iframe {
+  width: 100%;           /* Ahora ocupa todo el ancho del card */
+  height: 500px;         /* Antes era 450px, un poco más alto */
+  border: 0;
+}
+
+.ubicacion-card h2 {
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.ubicacion-card p {
+  margin-top: 1rem;
+  color: #333;
+}
+
+.ubicacion-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #e3342f;
+  color: #fff;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.ubicacion-btn:hover {
+  background-color: #c53027;
+}
