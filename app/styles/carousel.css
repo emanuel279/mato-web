@@ -1,14 +1,13 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
   width: 300%;
-  height: 100%;
   animation: slide 12s infinite;
 }
 
@@ -16,6 +15,25 @@
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 1024px) {
+  .carousel-img {
+    height: 70vh; /* tablets o pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 55vh; /* celulares */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-img {
+    height: 45vh; /* celulares pequeños */
+  }
 }
 
 @keyframes slide {
