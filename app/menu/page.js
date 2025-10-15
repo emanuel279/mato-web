@@ -36,9 +36,7 @@ export default function MenuPage() {
           <div className="menu-header">
             <div className="menu-box">
               <h1>Ma-To Shoyu Ramen</h1>
-              <p>
-                Todos los platillos son acompañados con rico caldo de cerdo.
-              </p>
+              <p>Todos los platillos son acompañados con rico caldo de cerdo.</p>
             </div>
             <div className="menu-image">
               <Image
@@ -53,71 +51,53 @@ export default function MenuPage() {
 
           {/* Tarjetas con línea divisora */}
           <div className="menu-cards">
-            {/* Línea amarilla vertical a la derecha */}
             <div className="menu-divider"></div>
 
-            {/* Tarjeta 1 */}
-            <div className="menu-card">
-              <div className="menu-card-img-left">
-                <Image
-                  src={platillos[0].imgSrc}
-                  alt="Platillo"
-                  width={440}
-                  height={440}
-                />
-              </div>
+            {platillos.map((plato, index) => (
               <div
-                className="menu-card-bg"
-                style={{ justifyContent: "flex-end" }}
+                key={index}
+                className={`menu-card ${
+                  index % 2 === 0 ? "menu-card-left" : "menu-card-right"
+                }`}
               >
-                <div className="menu-card-content">
-                  <h2>{platillos[0].titulo}</h2>
-                  <p>{platillos[0].descripcion}</p>
-                </div>
+                {/* Imagen a la izquierda o derecha según el orden */}
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="menu-card-img-left">
+                      <Image
+                        src={plato.imgSrc}
+                        alt="Platillo"
+                        width={440}
+                        height={440}
+                      />
+                    </div>
+                    <div className="menu-card-bg" style={{ justifyContent: "flex-end" }}>
+                      <div className="menu-card-content">
+                        <h2>{plato.titulo}</h2>
+                        <p>{plato.descripcion}</p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="menu-card-bg" style={{ justifyContent: "flex-start" }}>
+                      <div className="menu-card-content">
+                        <h2>{plato.titulo}</h2>
+                        <p>{plato.descripcion}</p>
+                      </div>
+                    </div>
+                    <div className="menu-card-img-right">
+                      <Image
+                        src={plato.imgSrc}
+                        alt="Platillo"
+                        width={440}
+                        height={440}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
-
-            {/* Tarjeta 2 */}
-            <div className="menu-card">
-              <div
-                className="menu-card-bg"
-                style={{ justifyContent: "flex-start" }}
-              >
-                <div className="menu-card-content">
-                  <h2>{platillos[1].titulo}</h2>
-                  <p>{platillos[1].descripcion}</p>
-                </div>
-              </div>
-              <div className="menu-card-img-right">
-                <Image
-                  src={platillos[1].imgSrc}
-                  alt="Platillo"
-                  width={440}
-                  height={440}
-                />
-              </div>
-            </div>
-
-            {/* Tarjeta 3 */}
-            <div className="menu-card">
-              <div className="menu-card-img-left">
-                <Image
-                  src={platillos[2].imgSrc}
-                  alt="Platillo"
-                  width={440}
-                  height={440}
-                />
-              </div>
-              <div
-                className="menu-card-bg"
-                style={{ justifyContent: "flex-end" }}
-              >
-                <div className="menu-card-content">
-                  <h2>{platillos[2].titulo}</h2>
-                  <p>{platillos[2].descripcion}</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Sección de Extras */}
@@ -125,40 +105,36 @@ export default function MenuPage() {
             <h2>Extras</h2>
           </div>
 
-           {/* Contenedor de mini tarjetas */}
-        <div className="extras-cards">
-          <div className="extras-card">
-            <h3>Huevo extra - 25$</h3>
-            <p>Huevo marinado con yema cremosa.</p>
+          {/* Contenedor de mini tarjetas */}
+          <div className="extras-cards">
+            <div className="extras-card">
+              <h3>Huevo extra - 25$</h3>
+              <p>Huevo marinado con yema cremosa.</p>
+            </div>
+
+            <div className="extras-card">
+              <h3>Fideos extra - 35$</h3>
+              <p>Porción extra de fideos frescos y suaves.</p>
+            </div>
+
+            <div className="extras-card">
+              <h3>Camarón extra - 55$</h3>
+              <p>Camarones jugosos con el toque de mar que encanta.</p>
+            </div>
+
+            <div className="extras-card">
+              <h3>Res extra - 50$</h3>
+              <p>Tiernos trozos de res que enriquecen tu ramen.</p>
+            </div>
+
+            <div className="extras-card">
+              <h3>Cerdo extra - 50$</h3>
+              <p>Deliciosa carne de cerdo marinada, llena de sabor.</p>
+            </div>
           </div>
-          
-          <div className="extras-card">
-            <h3>Fideos extra - 35$</h3>
-            <p>Porción extra de fideos frescos y suaves.</p>
-          </div>
-
-          <div className="extras-card">
-            <h3>Camarón extra - 55$</h3>
-            <p>Camarones jugosos con el toque de mar que encanta.</p>
-          </div>
-
-          <div className="extras-card">
-            <h3>Res extra - 50$</h3>
-            <p>Tiernos trozos de res que enriquecen tu ramen.</p>
-          </div>
-
-          <div className="extras-card">
-            <h3>Cerdo extra - 50$</h3>
-            <p>Deliciosa carne de cerdo marinada, llena de sabor.</p>
-          </div>
-
-
-
-        </div>
         </div>
       </main>
       <Footer />
     </div>
   );
 }
-

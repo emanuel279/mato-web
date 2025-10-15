@@ -1,11 +1,12 @@
+/* === Tu código original sin tocar === */
 /* Fondo del menú */
 .menu-background {
   min-height: 100vh;
   background-image: url("/ramen-img/fondoMenu.png");
-  background-size: 100rem;      /* Ajusta el tamaño como quieras */
-  background-repeat: no-repeat; /* No repetir la imagen */
-  background-position: center center; /* Centrar la imagen */
-  background-attachment: fixed; /* Fijar la imagen al hacer scroll */
+  background-size: 100rem; 
+  background-repeat: no-repeat; 
+  background-position: center center;
+  background-attachment: fixed; 
   position: relative;
 }
 /* Overlay negro */
@@ -28,25 +29,25 @@
 
 /* Header */
 .menu-header {
-  margin: 50px 0 0 60px;   /* pegado a la izquierda, con respiro */
-  width: auto;             /* ya no fuerza 1000px */
+  margin: 50px 0 0 60px;
+  width: auto;
   max-width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   position: relative;
   z-index: 3;
-  transform: none;         /* quitamos el translate */
-  left: 0;                 /* no lo centramos más */
+  transform: none;
+  left: 0;
 }
 
 /* Cuadro rojo */
 .menu-box {
   background-color: #cc1c1cd7;
   font-family: var(--font-mochiy-pop-one), sans-serif;
-  min-width: 350px;   /* más pequeño (antes 500px) */
+  min-width: 350px;
   max-width: 350px;
-  min-height: 150px;  /* más bajito (antes 200px) */
+  min-height: 150px;
   max-height: 150px;
   border-radius: 16px 0 0 16px;
   display: flex;
@@ -66,16 +67,16 @@
 
 .menu-box p {
   margin-top: 0.5rem;
-  font-size: 1rem;  /* reducido un poquito */
+  font-size: 1rem;
   color: white;
   font-weight: 500;
 }
 
 /* Imagen del caldo */
 .menu-image {
-  min-width: 350px;   /* antes 500px */
+  min-width: 350px;
   max-width: 350px;
-  min-height: 150px;  /* antes 200px */
+  min-height: 150px;
   max-height: 150px;
   position: relative;
   overflow: hidden;
@@ -86,7 +87,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 20px; /* más estrecho (antes 30px) */
+  width: 20px;
   height: 100%;
   background: linear-gradient(to right, #cc1c1cd7 0%, transparent 100%);
   pointer-events: none;
@@ -118,7 +119,6 @@
 .menu-card-bg {
   width: 1200px;
   height: 300px;
-
   border-radius: 24px;
   z-index: 1;
   display: flex;
@@ -158,7 +158,7 @@
   opacity: 0.95;
 }
 
-/* Imagenes de las tarjetas */
+/* Imágenes de las tarjetas */
 .menu-card-img-left,
 .menu-card-img-right {
   position: absolute;
@@ -181,18 +181,6 @@
   right: 0;
 }
 
-.menu-cards {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 100px;
-  gap: 60px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Línea amarilla pegada a las tarjetas */
 .menu-divider {
   width: 8px;
   height: 1000px;
@@ -203,7 +191,6 @@
   border-radius: 4px;
   z-index: 3;
 }
-
 
 .extras-section {
   position: absolute;
@@ -221,23 +208,21 @@
   margin: 0;
 }
 
-
 /* Contenedor de mini tarjetas */
 .extras-cards {
   position: absolute;
-  top: 400px;       /* Mantén la altura deseada */
-  left: 1200px;     /* Posición horizontal de la primera tarjeta */
+  top: 400px;
+  left: 1200px;
   display: flex;
-  flex-direction: column; /* Apila las tarjetas verticalmente */
-  gap: 20px;        /* Espacio entre tarjetas */
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Mini tarjeta */
 .extras-card {
-
   border-radius: 12px;
   padding: 15px;
-  width: 250px; 
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,4 +242,84 @@
   font-size: 1rem;
   line-height: 1.3;
   font-family: var(--font-mochiy-pop-one), sans-serif;
+}
+
+/* === FIN de tu código original === */
+
+
+/* === AJUSTES RESPONSIVOS === */
+@media (max-width: 1024px) {
+  .menu-card {
+    width: 90%;
+    margin-left: 0;
+  }
+  .menu-card-bg {
+    width: 100%;
+  }
+  .menu-card-content {
+    width: 100%;
+  }
+  .extras-section {
+    position: static;
+    margin: 40px 0 20px 0;
+    text-align: center;
+  }
+  .extras-cards {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-header {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .menu-box, .menu-image {
+    max-width: 90%;
+    min-width: auto;
+    border-radius: 16px;
+  }
+  .menu-card {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: auto;
+  }
+  .menu-card-img-left,
+  .menu-card-img-right {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  .menu-card-content {
+    padding: 10px;
+    width: 100%;
+  }
+  .menu-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-box h1 {
+    font-size: 0.9rem;
+  }
+  .menu-box p {
+    font-size: 0.8rem;
+  }
+  .menu-card-content h2 {
+    font-size: 1.2rem;
+  }
+  .menu-card-content p {
+    font-size: 0.9rem;
+  }
+  .extras-card {
+    width: 90%;
+  }
 }
